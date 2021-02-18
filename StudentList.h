@@ -21,6 +21,8 @@ public:
     // Methods
     void insertHead(string name, string address, float gpa);
     void insertTail(string name, string address, float gpa);
+    StudentNode* searchName(const string &name_) const;
+    StudentNode* searchGPA(const double &gpa_) const;
     void print() const;
 
 private:

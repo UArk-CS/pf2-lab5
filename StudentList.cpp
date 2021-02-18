@@ -61,6 +61,42 @@ void StudentList::insertTail(string name, string address, float gpa)
 
 }
 
+StudentNode* StudentList::searchName(const string &name_) const {
+
+    StudentNode *printer = Head;
+
+    while (printer != NULL) {
+
+        if (printer->getName() == name_) {
+            return printer;
+        }
+
+        printer = printer->getNext();
+
+    }
+
+    return printer;
+
+}
+
+StudentNode* StudentList::searchGPA(const double &gpa_) const {
+
+    StudentNode *printer = Head;
+
+    while (printer != NULL) {
+
+        if (printer->getGPA() >= gpa_) {
+            return printer;
+        }
+
+        printer = printer->getNext();
+
+    }
+
+    return printer;
+
+}
+
 void StudentList::print() const
 {
     StudentNode *ptr = Head;
